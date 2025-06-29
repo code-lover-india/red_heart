@@ -1,0 +1,481 @@
+/* Remove unwanted padding/margins */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Optional if using Bootstrap's fixed-top */
+body {
+    padding-top: 0 !important;
+}
+
+/* Video section fix */
+.video-section {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    z-index: 0;
+}
+
+/* If there's still space, offset by navbar height (56px default for Bootstrap) */
+.video-section {
+    margin-top: -56px; /* Adjust based on actual navbar height */
+}
+
+/* Optional: ensure full width video fills background */
+.background-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Your carousel and other styles below this are fine as they are for this specific issue */
+/* Ensure nav links don't take up too much space on mobile when expanded */
+/* ... (rest of your CSS) ... */
+        /* Carousel refinements for attractive and user-friendly display */
+        #photoCarousel .carousel-inner {
+            border-radius: 1rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background-color: #f0f2f5; /* Background for inner block */
+        }
+        #photoCarousel .carousel-item {
+            display: flex !important; /* Ensure flex for centering */
+            justify-content: center;
+            align-items: center;
+            height: 550px; /* Default height for larger screens */
+        }
+        #photoCarousel .carousel-item img {
+            max-height: 100%; /* Limit height to container */
+            max-width: 100%; /* Limit width to container */
+            object-fit: contain; /* Ensure full image is visible, scale down */
+            border-radius: 0.75rem;
+            margin: auto; /* Center the image */
+            display: block; /* Ensure it behaves as a block element for margin:auto */
+        }
+
+        /* Media queries for responsive carousel image height */
+        @media (max-width: 1200px) { /* Laptops and smaller desktops */
+            #photoCarousel .carousel-item {
+                height: 480px;
+            }
+        }
+        @media (max-width: 991.98px) { /* Tablets and smaller laptops */
+            #photoCarousel .carousel-item {
+                height: 400px;
+            }
+            body {
+                padding-top: 60px; /* Adjusted: Smaller padding for tablets */
+            }
+        }
+        @media (max-width: 767.98px) { /* Mobile devices */
+            #photoCarousel .carousel-item {
+                height: 300px;
+            }
+            #photoCarousel .carousel-caption {
+                font-size: 0.9rem;
+                padding: 0.75rem 1rem;
+            }
+            #photoCarousel .carousel-caption h5 {
+                font-size: 1.1rem;
+            }
+            body {
+                padding-top: 55px; /* Adjusted: Smaller padding for mobile */
+            }
+        }
+
+        #photoCarousel .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            max-width: 80%;
+            white-space: normal;
+            text-overflow: unset;
+            font-size: 1.1rem;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        #photoCarousel .carousel-caption h5 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        /* Enhanced Arrow Styling */
+        #photoCarousel .carousel-control-prev,
+        #photoCarousel .carousel-control-next {
+            width: 10%; /* Even wider control area for better clickability */
+            opacity: 1; /* Always visible */
+            transition: all 0.3s ease;
+            background: linear-gradient(to right, rgba(178, 34, 34, 0.2), rgba(178, 34, 34, 0)); /* Gradient background for a softer look */
+            border-radius: 0; /* Remove rounding, use gradient */
+        }
+        #photoCarousel .carousel-control-next {
+            background: linear-gradient(to left, rgba(178, 34, 34, 0.2), rgba(178, 34, 34, 0));
+        }
+
+        #photoCarousel .carousel-control-prev:hover,
+        #photoCarousel .carousel-control-next:hover {
+            background: linear-gradient(to right, rgba(178, 34, 34, 0.4), rgba(178, 34, 34, 0)); /* Darker on hover */
+        }
+        #photoCarousel .carousel-control-next:hover {
+            background: linear-gradient(to left, rgba(178, 34, 34, 0.4), rgba(178, 34, 34, 0));
+        }
+
+        #photoCarousel .carousel-control-prev-icon,
+        #photoCarousel .carousel-control-next-icon {
+            font-size: 4rem; /* Larger icons for prominence */
+            color: #ffda00; /* Yellow for high contrast */
+            text-shadow: 0 0 10px rgba(0,0,0,0.9), 0 0 5px #b22222; /* Stronger shadow with a hint of red */
+        }
+        #photoCarousel .carousel-indicators [data-bs-target] {
+            background-color: #b22222;
+        }
+        .quote-block {
+            background-color: #fff0f0;
+            border-left: 5px solid #b22222;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        /*  viedo css */
+        /* Carousel refinements for attractive and user-friendly video display */
+#videoCarousel .carousel-inner {
+    border-radius: 1rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    background-color: #f0f2f5;
+}
+#videoCarousel .carousel-item {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+}
+#videoCarousel .carousel-item video {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 0.75rem;
+    margin: auto;
+    display: block;
+}
+
+/* Responsive height adjustments for videos */
+@media (max-width: 1200px) {
+    #videoCarousel .carousel-item {
+        height: 480px;
+    }
+}
+@media (max-width: 991.98px) {
+    #videoCarousel .carousel-item {
+        height: 400px;
+    }
+    body {
+        padding-top: 60px;
+    }
+}
+@media (max-width: 767.98px) {
+    #videoCarousel .carousel-item {
+        height: 300px;
+    }
+    #videoCarousel .carousel-caption {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+    #videoCarousel .carousel-caption h5 {
+        font-size: 1.1rem;
+    }
+    body {
+        padding-top: 55px;
+    }
+}
+
+#videoCarousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 80%;
+    white-space: normal;
+    text-overflow: unset;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+#videoCarousel .carousel-caption h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Enhanced Arrow Styling for Video */
+#videoCarousel .carousel-control-prev,
+#videoCarousel .carousel-control-next {
+    width: 10%;
+    opacity: 1;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, rgba(178, 34, 34, 0.2), rgba(178, 34, 34, 0));
+    border-radius: 0;
+}
+#videoCarousel .carousel-control-next {
+    background: linear-gradient(to left, rgba(178, 34, 34, 0.2), rgba(178, 34, 34, 0));
+}
+#videoCarousel .carousel-control-prev:hover,
+#videoCarousel .carousel-control-next:hover {
+    background: linear-gradient(to right, rgba(178, 34, 34, 0.4), rgba(178, 34, 34, 0));
+}
+#videoCarousel .carousel-control-next:hover {
+    background: linear-gradient(to left, rgba(178, 34, 34, 0.4), rgba(178, 34, 34, 0));
+}
+#videoCarousel .carousel-control-prev-icon,
+#videoCarousel .carousel-control-next-icon {
+    font-size: 4rem;
+    color: #ffda00;
+    text-shadow: 0 0 10px rgba(0,0,0,0.9), 0 0 5px #b22222;
+}
+
+#videoCarousel .carousel-indicators [data-bs-target] {
+    background-color: #b22222;
+}
+
+        .contact-info-list li {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+        .contact-icon-box {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .contact-icon-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            background-color: #fdfdfd;
+        }
+        .contact-icon-box i {
+            color: #b22222;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Responsive Adjustments for Smaller Devices --- */
+        @media (max-width: 991.98px) { /* Tablets and smaller laptops */
+            .section-padding-lg {
+                padding: 80px 0; /* Reduce padding for medium screens */
+            }
+            .section-padding-md {
+                padding: 60px 0;
+            }
+            .hero-banner-new {
+                height: 70vh; /* Adjust hero height for tablets */
+            }
+            .hero-content-new h1 {
+                font-size: 2.5rem; /* Smaller heading */
+            }
+            .hero-content-new p.lead {
+                font-size: 1.1rem; /* Smaller lead text */
+            }
+            .feature-box, .contact-icon-box {
+                padding: 2rem; /* Reduce padding in boxes */
+            }
+            .feature-icon-circle {
+                width: 70px;
+                height: 70px;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .contact-icon-box i {
+                font-size: 3rem;
+            }
+            .quote-block {
+                padding: 1rem;
+            }
+            .contact-info-list li {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 767.98px) { /* Mobile devices */
+            .section-padding-lg {
+                padding: 60px 0; /* Further reduce padding for mobile */
+            }
+            .section-padding-md {
+                padding: 40px 0;
+            }
+            .hero-banner-new {
+                height: 60vh; /* Further adjust hero height for mobile */
+                padding: 2rem 0;
+            }
+            .hero-content-new h1 {
+                font-size: 2rem; /* Even smaller heading */
+                margin-bottom: 1.5rem !important;
+            }
+            .hero-content-new p.lead {
+                font-size: 1rem; /* Even smaller lead text */
+                margin-bottom: 2rem !important;
+            }
+            .hero-content-new .btn {
+                padding: 0.8rem 2rem !important; /* Smaller button */
+                font-size: 0.9rem !important;
+            }
+            .feature-box, .contact-icon-box {
+                padding: 1.5rem; /* Smallest padding for mobile boxes */
+            }
+            .feature-icon-circle {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            .contact-icon-box i {
+                font-size: 2.5rem;
+            }
+            .quote-block {
+                font-size: 0.9rem;
+            }
+            .contact-info-list li {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (max-width: 575.98px) { /* Extra small devices (portrait phones) */
+            .hero-banner-new {
+                height: 50vh; /* Minimum hero height for very small screens */
+            }
+            .hero-content-new h1 {
+                font-size: 1.8rem;
+            }
+            .hero-content-new p.lead {
+                font-size: 0.9rem;
+            }
+            .feature-box, .contact-icon-box {
+                padding: 1rem; /* Minimal padding */
+            }
+        }
+
+        /* Carousel refinements for achievement display */
+#achievementCarousel .carousel-inner {
+    border-radius: 1rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    background-color: #f0f2f5;
+}
+#achievementCarousel .carousel-item {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+}
+#achievementCarousel .carousel-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 0.75rem;
+    margin: auto;
+    display: block;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    #achievementCarousel .carousel-item {
+        height: 480px;
+    }
+}
+@media (max-width: 991.98px) {
+    #achievementCarousel .carousel-item {
+        height: 400px;
+    }
+    body {
+        padding-top: 60px;
+    }
+}
+@media (max-width: 767.98px) {
+    #achievementCarousel .carousel-item {
+        height: 300px;
+    }
+    #achievementCarousel .carousel-caption {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+    #achievementCarousel .carousel-caption h5 {
+        font-size: 1.1rem;
+    }
+    body {
+        padding-top: 55px;
+    }
+}
+
+/* Caption Styling */
+#achievementCarousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 80%;
+    white-space: normal;
+    text-overflow: unset;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+#achievementCarousel .carousel-caption h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Arrow Styling */
+#achievementCarousel .carousel-control-prev,
+#achievementCarousel .carousel-control-next {
+    width: 10%;
+    opacity: 1;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, rgba(178, 34, 34, 0.2), rgba(178, 34, 34, 0));
+    border-radius: 0;
+}
+#achievementCarousel .carousel-control-next {
+    background: linear-gradient(to left, rgba(178, 34, 34, 0.2), rgba(178, 34, 34, 0));
+}
+#achievementCarousel .carousel-control-prev:hover,
+#achievementCarousel .carousel-control-next:hover {
+    background: linear-gradient(to right, rgba(178, 34, 34, 0.4), rgba(178, 34, 34, 0));
+}
+#achievementCarousel .carousel-control-next:hover {
+    background: linear-gradient(to left, rgba(178, 34, 34, 0.4), rgba(178, 34, 34, 0));
+}
+#achievementCarousel .carousel-control-prev-icon,
+#achievementCarousel .carousel-control-next-icon {
+    font-size: 4rem;
+    color: #ffda00;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 5px #b22222;
+}
+
+/* Indicator dots */
+#achievementCarousel .carousel-indicators [data-bs-target] {
+    background-color: #b22222;
+}
+
+/* Optional: Quote block styling if needed */
+.quote-block {
+    background-color: #fff0f0;
+    border-left: 5px solid #b22222;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    font-style: italic;
+    color: #555;
+}
+
+
+ 

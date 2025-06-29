@@ -1,0 +1,118 @@
+.navbar-scroll .nav-link,
+.navbar-scroll .fa-bars,
+.navbar-scroll .navar-brand {
+  color: #4f4f4f;
+  
+}
+.navbar{
+    background-color: rgb(226, 246, 226);
+}
+.logo:hover{
+    border: 2px solid black;
+}
+.nav-item:hover{
+    border: 2px solid black;
+}
+
+
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Video Section */
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 580px;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.background-video {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Information Box */
+.info-box {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translateY(-50%);
+    width: 450px;
+    height: 300px;
+    padding: 25px;
+    background: linear-gradient(135deg, #4CAF50, #FFD700);
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.info-box h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.info-box p {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-60%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+
+
+
+/* Footer Styling */
+.footer {
+    background: rgb(186, 226, 186); /* Slightly darker shade of your website color */
+    padding: 10px 0; /* Reduced Height */
+    text-align: center;
+}
+
+/* Black Line */
+.footer-line {
+    border: 1px solid black;
+    width: 100%;
+    margin: 10px auto;
+}
+
+/* Social Icons */
+.social-icons a {
+    color: #2E7D32; /* Deep Green for Natural Look */
+    font-size: 22px;
+    margin: 0 12px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FF9800; /* Warm Orange Hover Effect */
+    transform: scale(1.2);
+}
+
